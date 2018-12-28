@@ -1,6 +1,9 @@
+
+
 //		This program uses either list of vector to keep track of party guests
 
-
+//   ** NOTE ** This program uses the my_guests.txt.
+// Make sure that my_guests.txt is in the correct folder :)
 
 
 #include <iostream>
