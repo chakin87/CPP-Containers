@@ -81,7 +81,9 @@ void print_guests(my_container* my_guests) {
 	std::cout << "--  Container Content End  --\n\n\n";
 }
 
-//   This functions return value is a ref to a guest.
+//   This functions returns a bool, which tells if the index is found.
+// A temperary guest is passed by ref to the function, and if the index
+// is availiable, then the temp guest points to the guest at the index.
 // since the function must work for either a vector or a list,
 // we iterate through the container sequentially
 bool get_guest(my_container* container, int index, guest &ret) {
@@ -119,6 +121,9 @@ int main(int argc, char** argv) {
 	read_file(my_guests);
 	print_guests(my_guests);
 
+	//   Create a guest obj to use for the get_guest() function.
+	// Since the temp guest points to the 'real' guest at said index,
+	// you can modify the guest through this temp guest.
 	guest temp;
 	if (get_guest(my_guests, 3, temp)) {
 		std::cout << "\n----------------------" << std::endl;
